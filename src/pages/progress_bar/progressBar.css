@@ -1,0 +1,123 @@
+.main {
+    height: 100vh;
+    padding: 20px;
+}
+
+.progress-bar-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.progress-track {
+    width: 100%;
+    height: 20px;
+    overflow: hidden;
+    background-color: #e5e7eb;
+    border: 1px solid #9ca3af;
+    border-radius: 10px;
+}
+
+.progress-fill {
+    width: 100%;
+    height: 100%;
+    background-color: #2563eb;
+    /* /* transform: scaleX(0); */
+    transform-origin: left;
+    animation-name: fill-progress;
+    /* 动画名字，对应 @keyframes fill-progress */
+    animation-duration: 2000ms;
+    /* 动画持续 2 秒 */
+    animation-timing-function: linear;
+    /* 匀速播放，不是先快后慢/先慢后快 */
+    animation-fill-mode: forwards;
+    /* 动画结束后，停留在最后一帧的状态，不会跳回起始状态 */
+}
+
+@keyframes fill-progress {
+    from {
+        transform: scaleX(0);
+    }
+
+    to {
+        transform: scaleX(1);
+    }
+}
+
+/*------------like button---------------*/
+
+.like-button-container {
+    width: 100%;
+}
+
+.like-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+
+    color: #888;
+    border: 2px solid #888;
+    border-radius: 9999px;
+    cursor: pointer;
+
+    transition: color 150ms ease, border-color 150ms ease, background-color 150 ms ease;
+}
+
+.like-button:not(.like-button--liked):not(.like-button--loading):hover {
+  border-color: #f00;
+  color: #f00;
+}
+
+.like-button--liked {
+  border-color: #f00;
+  background-color: #f00;
+  color: white;
+}
+
+
+/*------------Traffic light---------------*/
+
+.traffic-light-container {
+    display: flex;
+    width: 300px;
+    height: 50px;
+    border-radius: 5px;
+    border: 2px solid black;
+    justify-content: space-around;
+    align-items: center;
+    /*???????*/
+    flex-shrink: 1;
+}
+
+.traffic-light {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: 1px solid;
+}
+
+.red {
+    border-color: #f00;
+}
+
+.red-active {
+    background-color: red;
+}
+
+.yellow {
+    border-color: #BA8E23;
+}
+
+.yellow-active {
+    background-color: #BA8E23;
+}
+
+.green {
+    border-color: green;
+}
+
+.green-active {
+    background-color: green;
+}
+

@@ -1,0 +1,117 @@
+.practice-tabs {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid #dfe4e0;
+  background: rgba(249, 250, 248, 0.94);
+  box-shadow: 0 2px 14px rgba(21, 45, 29, 0.04);
+  backdrop-filter: blur(16px);
+}
+
+.practice-tabs__inner {
+  width: min(1180px, calc(100% - 48px));
+  height: 54px;
+  display: flex;
+  align-items: stretch;
+  gap: 30px;
+  margin: 0 auto;
+}
+
+.practice-tabs__title {
+  flex: 0 0 auto;
+  align-self: center;
+  color: #778079;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.practice-tabs__list {
+  min-width: 0;
+  display: flex;
+  align-items: stretch;
+  gap: 4px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.practice-tabs__list::-webkit-scrollbar {
+  display: none;
+}
+
+.practice-tab {
+  position: relative;
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 16px;
+  color: #778079;
+  font-size: 13px;
+  font-weight: 650;
+  text-decoration: none;
+  transition: color 150ms ease, background 150ms ease;
+}
+
+.practice-tab::after {
+  content: '';
+  position: absolute;
+  right: 14px;
+  bottom: -1px;
+  left: 14px;
+  height: 2px;
+  border-radius: 2px 2px 0 0;
+  background: #277a4d;
+  opacity: 0;
+  transform: scaleX(0.45);
+  transition: opacity 150ms ease, transform 150ms ease;
+}
+
+.practice-tab:hover {
+  color: #274031;
+  background: rgba(36, 121, 74, 0.04);
+}
+
+.practice-tab.is-active {
+  color: #17643b;
+}
+
+.practice-tab.is-active::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.practice-tab__number {
+  color: #a1aaa3;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+}
+
+.practice-tab.is-active .practice-tab__number {
+  color: #4d9670;
+}
+
+.blank-practice {
+  min-height: calc(100vh - 54px);
+  background: #fff;
+}
+
+@media (max-width: 700px) {
+  .practice-tabs__inner {
+    width: 100%;
+    height: 50px;
+    gap: 0;
+    padding-left: 12px;
+  }
+
+  .practice-tabs__title {
+    display: none;
+  }
+
+  .practice-tab {
+    padding: 0 13px;
+    font-size: 12px;
+  }
+}

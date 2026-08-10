@@ -1,0 +1,17 @@
+.clocks-container {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    padding: 50px;
+    gap: 20px;
+}
+
+.stopwatch-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.stopwatch-buttons {
+    display: flex;
+    gap: 10px;
+}

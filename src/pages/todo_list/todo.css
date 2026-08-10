@@ -1,0 +1,25 @@
+.todo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.todo-input {
+    justify-content: space-between;
+    display: flex;
+    width: 300px;
+}
+
+.todo-list {
+    width: 300px;
+}
+
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+}

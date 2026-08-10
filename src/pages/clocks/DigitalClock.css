@@ -1,0 +1,98 @@
+.digital-clock-container {
+    /* width: 1000px;
+    height: 250px; */
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+/*-------------digit pair--------------*/
+.digit-pair {
+    display: flex;
+    gap: 20px;
+}
+
+
+
+/*-------------digits--------------*/
+.digit-container {
+    position: relative;
+    width: 120px;
+    height: 200px;
+}
+
+.digit-container>.a,
+.digit-container>.c,
+.digit-container>.e {
+    position: absolute;
+    width: 100px;
+    height: 10px;
+    background-color: gray;
+    opacity: 0.2;
+    left: 8%;
+}
+
+.digit-container>.a {
+    top: 0;
+}
+
+.digit-container>.c {
+    top: 50%;
+}
+
+.digit-container>.e {
+    bottom: 0;
+}
+
+
+
+
+.digit-container>.g,
+.digit-container>.b,
+.digit-container>.f,
+.digit-container>.d {
+    position: absolute;
+    background-color: gray;
+    opacity: 0.2;
+    width: 10px;
+    height: 100px;
+}
+
+.digit-container>.g {
+    top: 5%;
+}
+
+.digit-container>.b {
+    top: 5%;
+    right: 0;
+}
+
+.digit-container>.f {
+    left: 0;
+    top: 50%;
+}
+
+.digit-container>.d {
+    right: 0;
+    bottom: 0;
+}
+
+.digit-container>.light-up {
+    background-color: red;
+    opacity: 1;
+}
+
+.colon-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.dot {
+    border-radius: 50%;
+    height: 10px;
+    width: 10px;
+    background-color: black;
+}
