@@ -1,0 +1,9 @@
+.piano-container {
+    display: flex;
+    height: 100px;
+    justify-content: space-around;
+}
+
+.piano-key.active {
+    background-color: red;
+}
