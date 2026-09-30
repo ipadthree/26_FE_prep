@@ -6,6 +6,7 @@ import "./PracticeApp.css";
 import ProgressBar from "../pages/progress_bar/progressBar.jsx";
 import Clocks from "../pages/clocks/Clocks.jsx";
 import Carousel from "../pages/carousel/Carousel.jsx";
+import { TicTacToe } from "../pages/tic_tac_toe/TicTacToe.jsx";
 
 // 所有练习集中配置在这里；每一项会同时生成顶部 Tab 和对应 Route。
 const PRACTICE_TABS = [
@@ -40,16 +41,22 @@ const PRACTICE_TABS = [
     element: <Carousel label="carousel" />,
   },
   {
-    path: "/practice-6",
-    label: "练习 6",
+    path: "/tic_tac_toe",
+    label: "tic tac toe",
     number: "6",
-    element: <BlankPracticePage label="练习 6" />,
+    element: <TicTacToe label="tic tac toe" />,
   },
   {
     path: "/practice-7",
     label: "练习 7",
     number: "7",
     element: <BlankPracticePage label="练习 7" />,
+  },
+  {
+    path: "/practice-8",
+    label: "练习 8",
+    number: "8",
+    element: <BlankPracticePage label="练习 8" />,
   },
 ];
 

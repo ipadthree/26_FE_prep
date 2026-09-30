@@ -1,0 +1,24 @@
+.board-container {
+    width: 100vh;
+    width: 100vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.board {
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+
+    gap: 2px;
+}
+
+.cell {
+    aspect-ratio: 1 / 1;
+    width: 40px;
+
+}
