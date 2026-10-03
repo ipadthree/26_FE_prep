@@ -1,0 +1,25 @@
+.directory {
+    display: flex;
+    padding-left: 16px;
+    flex-direction: column;
+}
+
+.children-wrapper {
+    display: grid;
+    /* Accordion 得在wrapper上 */
+    grid-template-rows: 0fr;
+    min-height: 0;
+    transition: grid-template-rows 500ms east-in;
+}
+
+.directory>button {
+    width: max-content;
+}
+
+.children-list {
+    overflow: hidden;
+}
+
+.children-wrapper.expanded {
+    grid-template-rows: 1fr;
+}
