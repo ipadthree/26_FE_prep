@@ -1,52 +1,12 @@
 import { useState } from "react";
 import "./TransferList.css";
-
-const DEFAULT_LEFT = [
-  {
-    id: 1,
-    name: "html",
-  },
-  {
-    id: 2,
-    name: "css",
-  },
-  {
-    id: 3,
-    name: "javascript",
-  },
-  {
-    id: 4,
-    name: "typescript",
-  },
-  {
-    id: 5,
-    name: "Typescript",
-  },
-];
-
-const DEFAULT_RIGHT = [
-  {
-    id: 6,
-    name: "react",
-  },
-  {
-    id: 7,
-    name: "angualr",
-  },
-  {
-    id: 8,
-    name: "vue",
-  },
-  {
-    id: 9,
-    name: "Svelte",
-  },
-];
+import { DEFAULT_LEFT, DEFAULT_RIGHT } from "./defaults";
 
 export default function TransferList() {
   const [leftItems, setLeftItems] = useState(DEFAULT_LEFT);
   const [rightItems, setRightItems] = useState(DEFAULT_RIGHT);
   const [selected, setSelected] = useState(new Set());
+
   function moveAllToRight() {
     setRightItems((oldRightItems) => {
       const rightItems = [...oldRightItems, ...leftItems];
@@ -131,16 +91,16 @@ function ButtonsColumn({
 }) {
   return (
     <section className="buttons">
-      <button onClick={moveAllToLeft}>
+      <button onClick={moveAllToLeft} aria-label="move all to left">
         <span aria-hidden="true">{"<<"}</span>
       </button>
-      <button onClick={moveSelectedToLeft}>
+      <button onClick={moveSelectedToLeft} aria-label="move selected to left">
         <span aria-hidden="true">{"<"}</span>
       </button>
-      <button onClick={moveSelectedToRight}>
+      <button onClick={moveSelectedToRight} aria-label="move selected to right">
         <span aria-hidden="true">{">"}</span>
       </button>
-      <button onClick={moveAllToRight}>
+      <button onClick={moveAllToRight} aria-label="move all to right">
         <span aria-hidden="true">{">>"}</span>
       </button>
     </section>
