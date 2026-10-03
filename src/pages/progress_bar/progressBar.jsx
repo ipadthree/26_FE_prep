@@ -1,6 +1,7 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./progressBar.css";
 import PianoKey from "./piano_key/PianoKey";
+import TransferList from "./TransferList/TransferList";
 
 /**
  * This component has
@@ -30,6 +31,7 @@ export default function ProgressBarContainer() {
         <PianoKey />
         <LikeButtonContainer />
         <TrafficLightContainer />
+        <TransferList />
         <button onClick={addBar}>Add bars</button>
         {generateProgressBars()}
       </div>

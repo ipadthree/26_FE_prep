@@ -1,0 +1,20 @@
+.transfer-list {
+    display: flex;
+    padding: 10px;
+    max-width: min(100%, 800px);
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    flex: 1;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.item {}
