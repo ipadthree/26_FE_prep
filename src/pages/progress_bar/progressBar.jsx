@@ -50,7 +50,7 @@ function ProgressBar() {
 
 //--------------------------Like button------------------------------/
 
-function LikeButtonContainer(params) {
+function LikeButtonContainer() {
   return (
     <div className="like-button-container">
       <LikeButton />
@@ -67,7 +67,7 @@ const LikeState = Object.freeze({
 
 const API_URL = "https://questions.greatfrontend.com/api/questions/like-button";
 
-function LikeButton(params) {
+function LikeButton() {
   const [buttonState, setButtonState] = useState(null);
   async function handleClick() {
     if (buttonState === LikeState.loading) {
@@ -75,7 +75,6 @@ function LikeButton(params) {
     }
 
     const action = buttonState === LikeState.liked ? "unlike" : "like";
-    const currentState = buttonState;
     const nextState =
       buttonState === LikeState.liked ? LikeState.default : LikeState.liked;
     setButtonState(LikeState.loading);
@@ -100,7 +99,7 @@ function LikeButton(params) {
       }
 
       setButtonState(nextState);
-    } catch (error) {
+    } catch (_e) {
       setButtonState(LikeState.failure);
     }
   }
@@ -191,7 +190,7 @@ const LightStatus = {
   },
 };
 
-function TrafficLightContainer(params) {
+function TrafficLightContainer() {
   // red, yellow, green
   const [color, setColor] = useState("green");
   useEffect(() => {
@@ -211,6 +210,26 @@ function TrafficLightContainer(params) {
     </div>
   );
 }
+
+// DigitalClock.jsx 里有实现例子
+
+/**
+ * let timerId;
+ * 
+  function scheduleNext() {
+    timerId = setTimeout(() => {
+      takeAction();
+
+      scheduleNext();
+    }, 1000);
+  }
+
+  function takeAction() {
+    console.log("do something");
+  }
+
+  scheduleNext();
+*/
 
 function RedLight({ isActive }) {
   const activeRedLight = isActive ? "red-active" : "";
