@@ -8,8 +8,7 @@
     display: grid;
     /* Accordion 得在wrapper上 */
     grid-template-rows: 0fr;
-    min-height: 0;
-    transition: grid-template-rows 500ms east-in;
+    transition: grid-template-rows 500ms ease-in;
 }
 
 .directory>button {
