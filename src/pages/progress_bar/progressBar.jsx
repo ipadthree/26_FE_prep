@@ -193,7 +193,13 @@ const LightStatus = {
 function TrafficLightContainer() {
   // red, yellow, green
   const [color, setColor] = useState("green");
+  const [isRunning, setIsRunning] = useState(true);
   useEffect(() => {
+    // Stop 状态下，不启动 timer
+    if (!isRunning) {
+      return;
+    }
+
     const { next, duration } = LightStatus[color];
 
     const timerId = setTimeout(() => {
@@ -201,12 +207,17 @@ function TrafficLightContainer() {
     }, duration);
 
     return () => clearTimeout(timerId);
-  }, [color]);
+  }, [color, isRunning]);
+
   return (
     <div className="traffic-light-container">
       <GreenLight isActive={color === "green"} />
       <YellowLight isActive={color === "yellow"} />
       <RedLight isActive={color === "red"} />
+
+      <button onClick={() => setIsRunning((prev) => !prev)}>
+        {isRunning ? "Stop" : "Start"}
+      </button>
     </div>
   );
 }

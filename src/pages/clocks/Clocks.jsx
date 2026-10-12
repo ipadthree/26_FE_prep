@@ -55,18 +55,17 @@ function StopWatch() {
     setTimeElapsed(0);
   }
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  function updateTime(timestamp) {
-    const timeElapsed =
-      timestamp - startTimeRef.current + previouslySavedTimeRef.current;
-    setTimeElapsed(timeElapsed);
-
-    animationIdRef.current = requestAnimationFrame(updateTime);
-  }
-
   useEffect(() => {
     if (!isRunning) {
       return;
+    }
+
+    function updateTime(timestamp) {
+      const timeElapsed =
+        timestamp - startTimeRef.current + previouslySavedTimeRef.current;
+      setTimeElapsed(timeElapsed);
+
+      animationIdRef.current = requestAnimationFrame(updateTime);
     }
 
     animationIdRef.current = requestAnimationFrame(updateTime);
@@ -80,7 +79,7 @@ function StopWatch() {
         cancelAnimationFrame(animationIdRef.current);
       }
     };
-  }, [isRunning, updateTime]);
+  }, [isRunning]);
 
   return (
     <div className="stopwatch-container">
